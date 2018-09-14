@@ -8,7 +8,7 @@ class Model extends PDO{
 	//recebe os parametros para o bind param
 	private function setParams($statment,$parameters=array()){
 		foreach ($parameters as $key => $value) {
-			$this->setParam($key,$value);
+			$this->setParam($statment,$key,$value);
 		}
 	}
 	//recebe apenas um valor para o bind param
