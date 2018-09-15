@@ -65,6 +65,20 @@ class Usuario{
 		$model->query("UPDATE tb_usuarios SET deslogin=:LOGIN AND dessenha=:PASSWORD WHERE idusuario=:ID",array(":LOGIN"=>$this->getDeslogin(),":PASSWORD"=>$this->getDessenha(),":ID"=>$this->getIdusuario()));
 
 	}
+	//deletar
+	public function delete(){
+		$model=new Model();
+		$model->query("DELETE FROM tb_usuarios WHERE idusuario=:ID",array(":ID"=>$this->getIdusuario()));
+		$this->zerarObjeto();
+
+	}
+	//zera um objeto
+	public function zerarObjeto(){
+		$this->setIdusuario(0);
+		$this->setDeslogin("");
+		$this->setDessenha("");
+		$this->setDtcadastro(new DateTime());
+	}
 	//o loadId carrega um usuario
 	public function loadId($id){
 		$model=new Model();

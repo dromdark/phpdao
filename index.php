@@ -21,6 +21,6 @@ $usuario=new Usuario();
 //echo $usuario;
 //carregando um usuário e editando ele
 $usuario->loadId(1);
-$usuario->update("professor","@#%$&");
+$usuario->delete();
 echo $usuario;
  ?>
